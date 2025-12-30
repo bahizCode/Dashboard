@@ -1,0 +1,99 @@
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 65%;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .container {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .a .content {
+        display: none;
+        position: absolute;
+    }
+
+    .a .burger {
+        display: block;
+        position: absolute;
+        z-index: 9;
+    }
+
+    .b {
+        margin-top: -1.4rem;
+        margin-left: 1.2rem;
+    }
+
+    .b .con-ins {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .b .con-ins .sales {
+        width: 70%;
+    }
+
+    .tabel {
+        /* padding-right: 1.4rem; */
+    }
+
+    .tabel table {
+        width: 100%;
+    }
+
+    .con-ins .sales:nth-child(2) h3 {
+        padding-right: 2rem;
+    }
+
+    .c {
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+    }
+
+    .c .top {
+        margin-left: 2rem;
+    }
+
+    .c .top .mode span {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .c .bottom-con .bot {
+        width: 100%;
+        height: 10.3rem;
+    }
+    .bottom-con .bot-plus {
+        width: 100%;
+    }
+
+    .middle-con .middle {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 591px) {
+    .b .con-ins .sales {
+        width: 50%;
+        
+    }
+    .b .con-ins .sales svg {
+        width: 85px;
+        height: 85px;
+    }
+    .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -2rem;
+    }
+
+    .b .con-ins .sales .middle {
+        flex-wrap: wrap;
+    }
+}
