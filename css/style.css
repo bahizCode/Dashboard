@@ -4,7 +4,7 @@
   --Primary: #4f46e5;
   --Accent: #22d3ee;
   --Background: #0f172a;
-  --Card-Panel: #1e293b;
+  --Card-Panel: rgb(30, 41, 59);
   --Sidebar: #020617;
   --Teks: #e5e7eb;
   --Teks-sekunder: #94a3b8;
@@ -30,11 +30,10 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--Background);
   color: var(--Teks);
-  height: 2000px;
 }
 
 small {
-    color: var(--Muted-text);
+  color: var(--Muted-text);
 }
 
 .container {
@@ -45,20 +44,20 @@ small {
 }
 
 .a {
-    position: relative;
+  position: relative;
 }
 
 .a .burger {
-    position: absolute;
-    left: -1.1rem;
-    top: -.4rem;
-    display: none;
+  position: absolute;
+  left: -1.1rem;
+  top: -0.4rem;
+  display: none;
 }
 
 .a .burger span {
-    font-size: 3rem;
-    color: var(--Muted-text);
-    cursor: pointer;
+  font-size: 3rem;
+  color: var(--Muted-text);
+  cursor: pointer;
 }
 
 .container .a .header-a {
@@ -103,6 +102,7 @@ small {
   margin-left: 0;
   background: var(--Secondary);
   color: #fff;
+  transition: 0.2s ease-in-out;
 }
 
 .container .a .con-icon a.active::before {
@@ -110,6 +110,7 @@ small {
   width: 5px;
   height: 100%;
   background-color: var(--Muted-text);
+  transition: 0.2s ease-in-out;
 }
 
 .container .a .con-icon a:hover span {
@@ -120,6 +121,7 @@ small {
 .a .con-icon a:last-child {
   position: absolute;
   bottom: 1.5rem;
+  width: 100%;
 }
 
 .con-icon .rel {
@@ -153,6 +155,7 @@ small {
   border-radius: 0.3rem;
   background: var(--Secondary);
   color: var(--Hover);
+  outline: none;
 }
 
 .con-ins {
@@ -170,8 +173,8 @@ small {
 }
 
 .con-ins .sales:hover {
-    box-shadow: 0 0 3px var(--Muted-text);
-    transition: .2s ease;
+  box-shadow: 0 0 3px var(--Muted-text);
+  transition: 0.2s ease;
 }
 
 .con-ins .sales span {
@@ -185,6 +188,7 @@ small {
 .middle {
   margin-top: 1rem;
   display: flex;
+  width: 100%;
 }
 
 .middle .left {
@@ -229,7 +233,6 @@ small {
   }
 }
 
-
 .circle .number {
   position: absolute;
   display: flex;
@@ -271,9 +274,9 @@ table tbody tr .det {
 }
 
 table tbody tr .det:hover {
-    color: var(--Card-Panel);
-    transition: .2s ease;
-    cursor: pointer;
+  color: var(--Card-Panel);
+  transition: 0.2s ease;
+  cursor: pointer;
 }
 
 /* .progress {
@@ -303,14 +306,14 @@ table tbody tr .det:hover {
   height: 1.5rem;
   width: 3.3rem;
   align-items: center;
-  gap: .3rem;
+  gap: 0.3rem;
   border-radius: 1rem;
 }
 
 .c .top .mode span {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
 }
 
 .c .top .mode span.active {
@@ -326,92 +329,192 @@ table tbody tr .det:hover {
 }
 
 .c .top .profile {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .c h4 {
-    margin-left: 1rem;
-    margin-top: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
-.c .middle, .c .bot {
-    background: var(--Secondary);
-    display: block;
-    width: 75%;
-    margin-left: 1rem;
-    padding: .7rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
+.c .middle,
+.c .bot {
+  background: var(--Secondary);
+  display: block;
+  width: 75%;
+  margin-left: 1rem;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
 }
 
 .c .middle .order-group {
-    display: flex;
+  display: flex;
 }
 
 .c .middle .order-group .order img {
-    width: 50x;
-    height: 50px;
-    border-radius: 50%;
+  width: 50x;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .c .middle .order-group .order-text {
-    line-height: 1rem;
-    margin-left: .4rem;
+  line-height: 1rem;
+  margin-left: 0.4rem;
 }
 
 .c .bot .analys {
-    display: flex;
+  display: flex;
 }
 
 .c .bot .analys .logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--Info);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--Secondary);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--Info);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Secondary);
 }
 .c .bot .analys .logo span {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .c .bot .analys .analys-text {
-    margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .c .bot .analys .analys-text p {
-    font-weight: 600;
-    color: var(--Error);
+  font-weight: 600;
+  color: var(--Error);
 }
 
 .bottom-con .bot:nth-child(3) .logo {
-    background: var(--Success);
-    color: var(--Background);
+  background: var(--Success);
+  color: var(--Background);
 }
 .bottom-con .bot:nth-child(3) .analys-text p,
 .bottom-con .bot:nth-child(4) .analys-text p {
-    color: var(--Success);
+  color: var(--Success);
 }
 
 .bottom-con .bot:nth-child(4) .logo {
-    background-color: var(--Background);
-    color: var(--Info);
+  background-color: var(--Background);
+  color: var(--Info);
 }
 
 .bottom-con .bot-plus {
-    font-size: 3rem;
-    color: var(--Muted-text);
-    width: 75%;
-    border: 2px dashed var(--Muted-text);
-    text-align: center;
-    margin: 1rem 0 0 1rem;
-    cursor: pointer;
+  font-size: 3rem;
+  color: var(--Muted-text);
+  width: 75%;
+  border: 2px dashed var(--Muted-text);
+  text-align: center;
+  margin: 1rem 0 0 1rem;
+  cursor: pointer;
 }
 
 img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+/* modal box */
+.modal-box {
+  background: rgba(30, 41, 59, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .3s ease;
+}
+
+.modal-box.show {
+  display: flex;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal-box .all-content {
+  display: flex;
+  width: max-content;
+  background: var(--Background);
+  padding: 1.5rem;
+  border-radius: .5rem;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+}
+
+.modal-box .modal-img {
+  width: 200px;
+  height: 230px;
+}
+
+.modal-box .modal-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.modal-text {
+  margin-left: 1rem;
+  line-height: 1.5rem;
+}
+
+.con-top2 .top2 p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--Muted-text);
+}
+
+.con-top2 .top2 .star-group span {
+  color: gold;
+  font-size: 24px;
+  font-variation-settings: "FILL" 0;
+}
+
+.con-top2 .middle {
+  display: block;
+}
+
+.top2 .detail {
+  display: flex;
+  gap: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.top2 .detail p {
+  color: #fff;
+}
+
+.top2 .detail span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.modal-text .delivery {
+  display: block;
+}
+
+.modal-text .delivery h5 {
+  font-size: 1.5rem;
+  color: var(--Success);
+}
+
+.modal-text .delivery div {
+  display: flex;
+  color: var(--Primary);
+  gap: 0.3rem;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
