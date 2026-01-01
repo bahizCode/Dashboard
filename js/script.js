@@ -70,4 +70,20 @@ modal.addEventListener('click', (e) => {
 });
 
 
+const light = document.querySelector('.light');
+const dark = document.querySelector('.dark');
 
+light.onclick = (e) => {
+    document.body.style.backgroundColor = '#fff';
+    document.body.style.color = '#000';
+    document.body.style.transition = '.3s ease-in-out';
+    light.classList.add('active');
+    dark.classList.remove('active');
+}
+dark.onclick = (e) => {
+    document.body.style.backgroundColor = '#0f172a';
+    document.body.style.color = '#fff';
+    document.body.style.transition = '.3s ease-in-out';
+    dark.classList.add('active');
+    light.classList.remove('active');
+}
