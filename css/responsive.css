@@ -14,14 +14,37 @@
     }
 
     .a .content {
-        display: none;
-        position: absolute;
+        position: fixed;
+        z-index: 8;
+        transform: translateX(-110%);
+        height: 100vh;
+        top: 0;
+        left: 0;
+        transition: .2s  ease-out;
+    }
+    
+    .a .content.show {
+        transform: translateX(0);
+        transition: .2s  ease-in;
     }
 
     .a .burger {
         display: block;
         position: absolute;
-        z-index: 9;
+        z-index: 7;
+    }
+
+    .con-icon .rel.icon .abs {
+        width: 17px;
+        height: 17px;
+    }
+
+    .container .a .header-a span {
+        opacity: 1;
+    }
+
+    .container .a .con-icon a.active {
+        background:#4f46e5;
     }
 
     .b {
@@ -31,6 +54,7 @@
 
     .b .con-ins {
         grid-template-columns: repeat(1,1fr);
+        margin-left: -1rem;
     }
 
     .b .con-ins .sales {
@@ -43,6 +67,7 @@
 
     .tabel table {
         width: 100%;
+        margin-left: -.6rem;
     }
 
     .con-ins .sales:nth-child(2) h3 {

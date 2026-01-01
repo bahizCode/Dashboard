@@ -1,3 +1,27 @@
+const sideBar = document.querySelector('.content');
+const menuSidebar = document.getElementById('burger');
+const closeSidebar = document.querySelector('.header-a span');
+
+console.log(sideBar)
+
+closeSidebar.onclick = (e) => {
+    sideBar.classList.remove('show');
+}
+
+menuSidebar.onclick = (e) => {
+     sideBar.classList.add('show');
+     closeSidebar.style.opacity = 1;
+}
+
+document.addEventListener('click', (e) => {
+     if(!sideBar.contains(e.target) && !menuSidebar.contains(e.target)) {
+        sideBar.classList.remove('show');
+     }
+})
+
+
+
+
 
 
 const icons = document.querySelectorAll('.con-icon a');
