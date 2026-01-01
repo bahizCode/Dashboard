@@ -22,15 +22,16 @@
         left: 0;
         transition: .2s  ease-out;
     }
-    .container .a .con-icon {
-        height: 94vh;
-    }
     
     .a .content.show {
         transform: translateX(0);
         transition: .2s  ease-in;
     }
-
+    
+    .container .a .con-icon {
+        height: 94vh;
+    }
+    
     .a .burger {
         display: block;
         position: absolute;
