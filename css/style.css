@@ -28,19 +28,14 @@
 
 /* ===== THEME ===== */
 body.dark {
-  --Background: #0f172a;
-  --Sidebar: #020617;
-  --Secondary: #334155;
-  --Teks: #e5e7eb;
-  --Muted-text: #64748b;
+  background-color: var(--Background);
+  color: var(--Teks);
 }
 
 body.light {
-  --Background: #ffffff;
-  --Sidebar: #f1f5f9;
-  --Secondary: #e2e8f0;
-  --Teks: #020617;
-  --Muted-text: #475569;
+  background: #f1f5f9;
+  color: #020617;
+  transition: .3s ease-in-out;
 }
 
 body {
@@ -344,6 +339,7 @@ table tbody tr .det:hover {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .c .top .mode span.active {

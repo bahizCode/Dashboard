@@ -1,3 +1,5 @@
+
+// ini buka tutup sidebar
 const sidebar = document.querySelector('.a .content');
 const burger = document.getElementById('burger');
 const sidebarClose = document.querySelector('.header-a span');
@@ -22,12 +24,42 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// ini saat navbarnya aktif berubah warna
+const iconSide = document.querySelectorAll('.con-icon a');
+iconSide.forEach(icon =>  {
+  icon.addEventListener('click', (e) => {
+    iconSide?.forEach(i => i.classList.remove('active'));
+    e.currentTarget.classList.add('active');
+  })
+});
+
+
+// ini darkmode
+const mode = document.querySelectorAll('.mode span');
+mode?.forEach(m => {
+  m.addEventListener('click', (e) => {
+    mode.forEach(m => m.classList.remove('active'));
+    m.classList.add('active');
+
+    const light = document.querySelector('.mode .light');
+    const body = document.body;
+    
+    if(e.target === light) {
+        body.classList.remove('dark');
+        body.classList.add('light');
+    } else {
+        body.classList.remove('light');
+        body.classList.add('dark');
+    }
+  })
+})
 
 
 
 
 
 
+// ini untuk modal box
 const modal = document.querySelector('.modal-box');
 const modalClose = modal.querySelector('.close');
 
@@ -69,23 +101,23 @@ document.addEventListener('keydown', (e) => {
 
 
 
-const lightBtn = document.querySelector('.light');
-const darkBtn = document.querySelector('.dark');
+// const lightBtn = document.querySelector('.light');
+// const darkBtn = document.querySelector('.dark');
 
-const setTheme = (theme) => {
-  document.body.classList.remove('light', 'dark');
-  document.body.classList.add(theme);
+// const setTheme = (theme) => {
+//   document.body.classList.remove('light', 'dark');
+//   document.body.classList.add(theme);
 
-  lightBtn.classList.toggle('active', theme === 'light');
-  darkBtn.classList.toggle('active', theme === 'dark');
+//   lightBtn.classList.toggle('active', theme === 'light');
+//   darkBtn.classList.toggle('active', theme === 'dark');
 
-  localStorage.setItem('theme', theme);
-};
+//   localStorage.setItem('theme', theme);
+// };
 
 // Load theme
-const savedTheme = localStorage.getItem('theme') || 'dark';
-setTheme(savedTheme);
+// const savedTheme = localStorage.getItem('theme') || 'dark';
+// setTheme(savedTheme);
 
-lightBtn.addEventListener('click', () => setTheme('light'));
-darkBtn.addEventListener('click', () => setTheme('dark'));
+// lightBtn.addEventListener('click', () => setTheme('light'));
+// darkBtn.addEventListener('click', () => setTheme('dark'));
 
