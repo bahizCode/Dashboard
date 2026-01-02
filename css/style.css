@@ -26,6 +26,23 @@
   text-decoration: none;
 }
 
+/* ===== THEME ===== */
+body.dark {
+  --Background: #0f172a;
+  --Sidebar: #020617;
+  --Secondary: #334155;
+  --Teks: #e5e7eb;
+  --Muted-text: #64748b;
+}
+
+body.light {
+  --Background: #ffffff;
+  --Sidebar: #f1f5f9;
+  --Secondary: #e2e8f0;
+  --Teks: #020617;
+  --Muted-text: #475569;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--Background);

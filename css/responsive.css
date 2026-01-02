@@ -13,20 +13,24 @@
         grid-template-columns: repeat(1,1fr);
     }
 
-    .a .content {
-        position: fixed;
-        z-index: 8;
-        transform: translateX(-110%);
-        height: 100vh;
-        top: 0;
-        left: 0;
-        transition: .2s  ease-out;
-    }
-    
-    .a .content.show {
-        transform: translateX(0);
-        transition: .2s  ease-in;
-    }
+/* ===== SIDEBAR ===== */
+.a .content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 13rem;
+  background: var(--Sidebar);
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  will-change: transform;
+  z-index: 10;
+}
+
+.a .content.show {
+  transform: translateX(0);
+}
+
     
     .container .a .con-icon {
         height: 94vh;

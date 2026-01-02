@@ -1,89 +1,91 @@
-const sideBar = document.querySelector('.content');
-const menuSidebar = document.getElementById('burger');
-const closeSidebar = document.querySelector('.header-a span');
+const sidebar = document.querySelector('.a .content');
+const burger = document.getElementById('burger');
+const sidebarClose = document.querySelector('.header-a span');
 
-console.log(sideBar)
+const openSidebar = () => sidebar.classList.add('show');
+const closeSidebar = () => sidebar.classList.remove('show');
 
-closeSidebar.onclick = (e) => {
-    sideBar.classList.remove('show');
-}
+burger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  openSidebar();
+});
 
-menuSidebar.onclick = (e) => {
-     sideBar.classList.add('show');
-     closeSidebar.style.opacity = 1;
-}
+sidebarClose.addEventListener('click', closeSidebar);
 
 document.addEventListener('click', (e) => {
-     if(!sideBar.contains(e.target) && !menuSidebar.contains(e.target)) {
-        sideBar.classList.remove('show');
-     }
-})
+  if (
+    sidebar.classList.contains('show') &&
+    !sidebar.contains(e.target) &&
+    !burger.contains(e.target)
+  ) {
+    closeSidebar();
+  }
+});
 
 
 
 
 
 
-const icons = document.querySelectorAll('.con-icon a');
-icons.forEach(icon => {
-    if(!icons || icons.length === 0) return;
-    icon.addEventListener('click', (e) => {
-        icons.forEach(i => i.classList.remove('active'));
-        e.currentTarget.classList.add('active');
-    })
-})
 
-const detailButton = document.querySelectorAll('.det');
 const modal = document.querySelector('.modal-box');
 const modalClose = modal.querySelector('.close');
 
 const modalImg = modal.querySelector('.modal-img img');
-const modalNama = modal.querySelector('.top h3');
+const modalName = modal.querySelector('.top h3');
 const modalRating = modal.querySelector('.top2 p');
 const modalEval = modal.querySelector('.top2 .eval');
 const modalQty = modal.querySelector('.detail span');
 const modalPrice = modal.querySelector('.delivery h5');
-const modalStat = modal.querySelector('.delivery span:last-child');
+const modalStatus = modal.querySelector('.delivery span:last-child');
 
-detailButton.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        modalImg.src = btn.dataset.img;
-        modalNama.textContent = btn.dataset.name;
-        modalRating.textContent = btn.dataset.rating;
-        modalEval.textContent = btn.dataset.eval;
-        modalQty.textContent = btn.dataset.qty;
-        modalPrice.textContent = btn.dataset.price;
-        modalStat.textContent = btn.dataset.status;
+document.querySelectorAll('.det').forEach(btn => {
+  btn.addEventListener('click', () => {
+    modalImg.src = btn.dataset.img;
+    modalName.textContent = btn.dataset.name;
+    modalRating.textContent = btn.dataset.rating;
+    modalEval.textContent = btn.dataset.eval;
+    modalQty.textContent = btn.dataset.qty;
+    modalPrice.textContent = btn.dataset.price;
+    modalStatus.textContent = btn.dataset.status;
 
-        modal.classList.add('show');
-    })
+    modal.classList.add('show');
+  });
 });
 
-modalClose.addEventListener('click', (e) => {
-       modal.classList.remove('show')
+const closeModal = () => modal.classList.remove('show');
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => e.target === modal && closeModal());
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
 });
 
-modal.addEventListener('click', (e) => {
-    if(e.target === modal) {
-        modal.classList.remove('show')
-    }
-});
 
 
-const light = document.querySelector('.light');
-const dark = document.querySelector('.dark');
 
-light.onclick = (e) => {
-    document.body.style.backgroundColor = '#fff';
-    document.body.style.color = '#000';
-    document.body.style.transition = '.3s ease-in-out';
-    light.classList.add('active');
-    dark.classList.remove('active');
-}
-dark.onclick = (e) => {
-    document.body.style.backgroundColor = '#0f172a';
-    document.body.style.color = '#fff';
-    document.body.style.transition = '.3s ease-in-out';
-    dark.classList.add('active');
-    light.classList.remove('active');
-}
+
+
+
+
+const lightBtn = document.querySelector('.light');
+const darkBtn = document.querySelector('.dark');
+
+const setTheme = (theme) => {
+  document.body.classList.remove('light', 'dark');
+  document.body.classList.add(theme);
+
+  lightBtn.classList.toggle('active', theme === 'light');
+  darkBtn.classList.toggle('active', theme === 'dark');
+
+  localStorage.setItem('theme', theme);
+};
+
+// Load theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+setTheme(savedTheme);
+
+lightBtn.addEventListener('click', () => setTheme('light'));
+darkBtn.addEventListener('click', () => setTheme('dark'));
+
